@@ -34,10 +34,19 @@ Die Seite ist danach unter `http://localhost:5173` erreichbar. Der Entwicklungss
 
 ```bash
 npm run build
-npm run preview
 ```
 
-`npm run build` prüft zuerst die TypeScript-Typen und schreibt anschließend den statischen Build nach `dist/`. Mit `npm run preview` wird dieser Build unter `http://localhost:4173` ausgeliefert. Das Verzeichnis `dist/` kann auch von jedem anderen statischen Webserver bereitgestellt werden; die Anwendung muss dabei alle Pfade auf `index.html` zurückfallen lassen.
+`npm run build` prüft zuerst die TypeScript-Typen und schreibt anschließend den statischen Build nach `dist/`.
+
+## Dienste und Start
+
+Die Anwendung besteht aus genau einem Dienst: `web` – die statische React/Vite-Website, die aus `./` gebaut wird und den Inhalt von `dist/` ausliefert. Sie läuft auf Port `4173` und wird mit dem folgenden Befehl gestartet:
+
+```bash
+npm run preview -- --port 4173 --strictPort
+```
+
+Danach ist die Website unter `http://localhost:4173` erreichbar. Das Verzeichnis `dist/` kann auch von jedem anderen statischen Webserver bereitgestellt werden; die Anwendung muss dabei alle Pfade auf `index.html` zurückfallen lassen.
 
 ## Nutzung der Website
 
