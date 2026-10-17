@@ -58,5 +58,6 @@ export interface Reference {
   id: string;
   title: string;
   image: ImageAsset;
+  badge?: string;
   specs: { label: string; value: string }[];
 }

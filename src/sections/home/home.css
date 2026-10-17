@@ -1,0 +1,16 @@
+.reference-grid > [data-reveal] {
+  display: flex;
+  min-width: 0;
+}
+
+.reference-grid > [data-reveal] > .reference-card {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.product-copy__content {
+  display: grid;
+  justify-items: start;
+  gap: 1.4rem;
+  width: 100%;
+}
