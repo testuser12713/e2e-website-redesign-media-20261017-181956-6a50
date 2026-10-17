@@ -1,0 +1,143 @@
+.gallery-header {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 70ch;
+}
+
+.gallery-section__head {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 72ch;
+  margin-bottom: var(--space-6);
+}
+
+.gallery-section__head .lead {
+  margin: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.gallery-panel {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--fg);
+}
+
+.gallery-panel__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.gallery-panel__code {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.gallery-panel__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.gallery-panel__body > .btn--block {
+  flex: 1 1 100%;
+}
+
+.gallery-panel[data-state="hover"] .btn {
+  transform: translateY(-1px);
+}
+
+.gallery-panel[data-state="focus"] .btn {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.gallery-panel[data-state="active"] .btn {
+  transform: translateY(0);
+}
+
+.gallery-panel__hint {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.gallery-surface {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+}
+
+.gallery-surface--dark {
+  background: var(--ink);
+}
+
+.gallery-card-grid {
+  margin: 0;
+}
+
+.gallery-reveal-box {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-muted);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.gallery-stagger {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.gallery-image-frame {
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--paper-2);
+  aspect-ratio: 1;
+}
+
+.gallery-image-frame--wide {
+  aspect-ratio: 16 / 9;
+}
+
+.gallery-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-intro,
+.gallery-section {
+  scroll-margin-top: var(--space-8);
+}
+
+@media (max-width: 560px) {
+  .gallery-panel {
+    padding: var(--space-4);
+  }
+
+  .gallery-panel__body > .btn {
+    width: 100%;
+  }
+}
